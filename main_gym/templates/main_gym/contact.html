@@ -1,0 +1,38 @@
+{% extends 'main_gym/base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main_gym/form.css' %}">
+<div class="form-container">
+  <div class="wrapper">
+<h2>CONTACT</h2>
+<form method="post">
+  {% csrf_token %}
+
+<div class="form-input">
+  <label><i class="fa-solid fa-user"></i>Subject</label><br>
+  <input type="text" name="subject" maxlength="100" required id="id_subject" class="form-control">
+</div>
+
+  
+  
+
+
+  <div class="form-input">
+    <label><i class="fa-solid fa-message"></i>Message</label><br>
+    <textarea name="message" required id="id_message" class="form-control">
+  </textarea>
+  </div>
+
+
+  
+  
+    
+  
+<div class="form-input">
+  <button type="submit" class="btn">Send</button>
+</div>
+</form>
+</div>
+</div>
+{% endblock %}

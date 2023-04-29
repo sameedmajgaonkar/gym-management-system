@@ -1,0 +1,30 @@
+{% extends 'main_gym/base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main_gym/table.css' %}">
+<div class="table-container">
+    <h3>View Plan</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Duration</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in pln %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.amount}}</td>
+                <td>{{i.duration}}</td>
+                <td><a class="del" href="{% url 'delete_plan' i.id %}"
+                        onclick="return confirm('Are You Sure?')">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'main_gym/base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main_gym/table.css' %}">
+
+    
+<div class="table-container">
+    <h3>View Member</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Email Id</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Plan Name</th>
+                <th>Join Date</th>
+                <th>Expiry Date</th>
+                <th>Initial Amount</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in member %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.contact}}</td>
+                <td>{{i.emailid}}</td>
+                <td>{{i.age}}</td>
+                <td>{{i.gender}}</td>
+                <td>{{i.plan}}</td>
+                <td>{{i.joindate}}</td>
+                <td>{{i.expiredate}}</td>
+                <td>{{i.initialamount}}</td>
+                <td><a class="del" href="{% url 'delete_member' i.id %}" onclick="return confirm('Are You Sure?')">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: url("bgg.jpg") no-repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+  color: #fff;
+  font-family: 'Poppins', sans-serif; }
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 440px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .wrapper .form-box {
+    width: 100%;
+    padding: 40px; }
+    .wrapper .form-box h2 {
+      font-size: 2rem;
+      text-align: center; }
+    .wrapper .form-box .btn {
+      width: 100%;
+      height: 45px;
+      background: #41803b;
+      border: none;
+      outline: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: 500; }
+    .wrapper .form-box .form-input {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      border-bottom: 2px solid #fff;
+      margin: 30px 0; }
+      .wrapper .form-box .form-input label {
+        position: absolute;
+        top: 50%;
+        left: 35px;
+        transform: translate(-50%);
+        font-size: 1rem;
+        pointer-events: none;
+        font-weight: 500; }
+      .wrapper .form-box .form-input input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        font-weight: 500;
+        color: #fff;
+        padding: 0 35px 0 5px; }
+        .wrapper .form-box .form-input input:focus ~ label, .wrapper .form-box .form-input input:valid ~ label {
+          top: -10px;
+          transition: all 0.7s; }
+      .wrapper .form-box .form-input .icon {
+        position: absolute;
+        right: 8px; }
+
+
+/*# sourceMappingURL=login.css.map */
