@@ -1,0 +1,72 @@
+{% extends 'main_gym/base.html' %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'main_gym/table.css' %}" />
+<link rel="stylesheet" href="{% static 'main_gym/form.css' %}" />
+
+<div id="vi-at">
+  <form method="POST">
+    {% csrf_token %}
+    <div id="dte">
+      <label for="date"
+        ><i class="fa-sharp fa-solid fa-calendar-days"></i>Enter date:</label
+      ><br />
+      <input type="date" name="date" required />
+    </div>
+    <div>
+      <button type="submit" class="btn">View attendance</button>
+    </div>
+  </form>
+</div>
+<div class="table-container" style="margin: auto; width: 700px">
+  <h2>View Attendance</h2>
+  <div class="table-wrapper">
+    {% if attendance_records %}
+    <table>
+      <thead>
+        <tr>
+          <th>Member name</th>
+          <th>Shift</th>
+          <th>Attendance</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for attendance in attendance_records %}
+        <tr>
+          <td>{{ attendance.member }}</td>
+          <td>{{ attendance.shift }}</td>
+          <td>
+            {% if attendance.status == True %} Present{% else %} Absent {% endif %}
+          </td>
+        </tr>
+        {% endfor %} {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+  #vi-at {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    color: var(--primarycolor);
+    width: 20rem;
+  }
+  #vi-at div {
+    margin-top: 2rem;
+  }
+
+  #dte input {
+    background-color: var(--primarycolor);
+    border: none;
+    outline: none;
+    padding: 5px;
+    margin-top: 1rem;
+  }
+  #dte {
+    margin-left: 5.5rem;
+  }
+  .btn {
+    background-color: var(--bg);
+  }
+</style>
+{% endblock %}

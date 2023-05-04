@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 ]
 
 JAZZMIN_UI_TWEAKS = {
-    "theme":"darkly",
+    "theme": "darkly",
 }
 
 MIDDLEWARE = [

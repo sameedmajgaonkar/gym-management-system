@@ -1,0 +1,82 @@
+{% extends 'main_gym/base.html' %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'main_gym/table.css' %}" />
+<link rel="stylesheet" href="{% static 'main_gym/form.css' %}" />
+
+<h2>Attendance</h2>
+
+<div
+  class="table-container"
+  style="width: 50rem; overflow: hidden;"
+>
+  <div class="table-wrapper">
+    <form method="POST">
+      {% csrf_token %}
+      <div class="shift">
+        <label for="shift">Select Shift:</label>
+        <select name="shift" required>
+          <option value="morning">Morning</option>
+          <option value="evening">Evening</option>
+        </select>
+      </div>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Member</th>
+            <th>Attendance</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for member in members %}
+          <tr>
+            <td style="width: 50%">{{ member.name }}</td>
+            <td>
+              <input
+                class="ch"
+                type="checkbox"
+                name="status_{{ member.id }}"
+                value="present"
+              />
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <br />
+      <div class="form-input" style="position: relative; bottom: 3rem">
+        <button type="submit" class="btn" style="position: relative; top: 3rem">
+          Mark attendance
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<style>
+  .shift {
+    margin-left: 4rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+  .shift select {
+    width: 80%;
+    height: 100%;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.2rem;
+    border: none;
+
+    background-image: linear-gradient(to bottom right, #d7fb00, #999999);
+  }
+  .shift > select > option {
+    background-color: var(--primarycolor);
+  }
+
+  .btn {
+    background-color: var(--bg);
+  }
+  .ch {
+    accent-color: var(--primarycolor);
+    height: 20px;
+    width: 20px;
+  }
+</style>
+{% endblock %}

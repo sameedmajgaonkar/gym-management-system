@@ -1,38 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LOGIN</title>
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'main_gym/login.css' %}">
-  <script src="https://kit.fontawesome.com/50350e8f17.js" crossorigin="anonymous"></script>
-
-</head>
-<body>
-
-<div class="container">
-  <div class="wrapper">
-    <div class="form-box login">
-      <h2>Login</h2>
-      <form method="POST">
-        {% csrf_token %}
-        <div class="form-input">
-          <span class="icon"><i class="fa-solid fa-user" style="color: #ffffff;"></i></span>
-          <input type="text" required name="username">
-          <label>Username</label>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOGIN</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main_gym/login.css' %}" />
+    <script
+      src="https://kit.fontawesome.com/50350e8f17.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="area">
+      <div class="container">
+        <div class="wrapper">
+          <div class="form-box login">
+            <h2>Login</h2>
+            <form method="POST">
+              {% csrf_token %}
+              <div class="input-wrapper">
+                <div class="form-input">
+                  <span class="icon"><i class="fa-solid fa-user"></i></span>
+                  <input type="text" required name="username" />
+                  <label>Username</label>
+                </div>
+                <div class="form-input">
+                  <span class="icon"><i class="fa-solid fa-key"></i></span>
+                  <input type="password" required name="password" />
+                  <label>Password</label>
+                </div>
+              </div>
+              <button type="submit" class="btn">
+                Login<i
+                  class="fa-solid fa-arrow-right"
+                  style="color: #000000"
+                ></i>
+              </button>
+            </form>
+          </div>
         </div>
-        <div class="form-input">
-          <span class="icon"><i class="fa-solid fa-key" style="color: #ffffff;"></i></span>
-          <input type="password" required name="password">
-          <label>Password</label>
-        </div>
-        <button type="submit" class="btn">Login</button>
-      </form>
+      </div>
+
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
-  </div>
-</div>
-
-</body>
+  </body>
 </html>

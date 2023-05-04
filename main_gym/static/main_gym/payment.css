@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.payment-container {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#py {
+  text-align: center;
+  color: #ffffff;
+  letter-spacing: 2px;
+  font-size: 2rem;
+}
+#pay {
+  background-color: #666666;
+  height: 450px;
+  width: 400px;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 5px 5px 6px #080809;
+}
+#pay img {
+  width: 250px;
+  height: 250px;
+  margin: 1rem;
+}
+button {
+  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  transition: all 0.5s;
+  text-align: center;
+}
+.payment-btn i {
+  text-align: center;
+  margin: 0;
+  padding: 0.5rem 0.7rem;
+}
+.done {
+  background-color: #009107;
+  color: #ffffff;
+}
+.done:hover {
+  box-shadow: inset 43px 0 0 0 #00559a, inset -43px 0 0 0 #00559a;
+}
+.cancel {
+  background-color: #a90000;
+  color: #ffffff;
+}
+.cancel:hover {
+  box-shadow: inset 43px 0 0 0 #00559a, inset -43px 0 0 0 #00559a;
+}
+
+.payment-btn {
+  gap: 6rem;
+  margin-top: 0.6rem;
+}
+.hidden {
+  transform: scale(10%);
+  display: none;
+}
+.show {
+  transform: scale(100%);
+  display: flex;
+}

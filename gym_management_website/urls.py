@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from main_gym import views
 from django.contrib.auth.decorators import login_required
 
@@ -22,7 +22,7 @@ from django.contrib.auth.decorators import login_required
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.loginuser, name='loginuser'),
-    path('home/', views.home, name='home'),
+    path('home/', login_required(views.home), name='home'),
     path('gallery/', views.gallery, name='gallery'),
     path('logout/', views.logoutuser, name='logoutuser'),
 
@@ -30,11 +30,6 @@ urlpatterns = [
     path('view_enquiry/', views.View_Enquiry, name='view_enquiry'),
     path('delete_enquiry(?p<int:pid>)',
          views.Delete_Enquiry, name='delete_enquiry'),
-
-    path('add_equipment/', views.Add_Equipment, name='add_equipment'),
-    path('view_equipment/', views.View_Equipment, name='view_equipment'),
-    path('delete_equipment(?p<int:pid>)',
-         views.Delete_Equipment, name='delete_equipment'),
 
     path('add_plan/', views.Add_Plan, name='add_plan'),
     path('view_plan/', views.View_Plan, name='view_plan'),
@@ -44,5 +39,9 @@ urlpatterns = [
     path('view_member/', views.View_Member, name='view_member'),
     path('delete_member(?p<int:pid>)', views.Delete_Member, name='delete_member'),
 
+    path('mark-attendance/', views.mark_attendance, name='mark_attendance'),
+    path('view-attendance/', views.view_attendance, name='view_attendance'),
+
     path('contact/', views.send_emails, name='send_emails'),
+
 ]

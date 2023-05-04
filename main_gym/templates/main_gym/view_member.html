@@ -3,9 +3,10 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'main_gym/table.css' %}">
 
-    
+
 <div class="table-container">
-    <h3>View Member</h3>
+    <h2>View Members</h2>
+    <div class="table-wrapper">
     <table border="1">
         <thead>
             <tr>
@@ -38,5 +39,6 @@
             {% endfor %}
         </tbody>
     </table>
+</div>
 </div>
 {% endblock %}

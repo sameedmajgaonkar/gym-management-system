@@ -1,32 +1,52 @@
-{% extends 'main_gym/base.html' %}
-{% block content %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'main_gym/table.css' %}">
+{% extends 'main_gym/base.html' %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'main_gym/table.css' %}" />
+
 <div class="table-container">
-    <h3>View Enquiry</h3>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Contact</th>
-                <th>Email Id</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>Remove</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in enq %}
-            <tr>
-                <td>{{i.name}}</td>
-                <td>{{i.contact}}</td>
-                <td>{{i.emailid}}</td>
-                <td>{{i.age}}</td>
-                <td>{{i.gender}}</td>
-                <td><a class="del" href="{% url 'delete_enquiry' i.id %}" onclick="return confirm('Are You Sure?')">Delete</a></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+  <h2>View Enquiries</h2>
+  <div class="table-wrapper">
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Email Id</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in enq %}
+      <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.contact}}</td>
+        <td>{{i.emailid}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.gender}}</td>
+        <td>
+          <a
+            class="del"
+            href="{% url 'delete_enquiry' i.id %}"
+            onclick="return confirm('Are You Sure?')"
+            >Delete</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
+</div>
+<ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
 {% endblock %}

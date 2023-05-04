@@ -8,6 +8,7 @@
 }
 
 .form-container{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,8 +18,8 @@
 h2{
     text-align: center;
     margin-top: 1.3rem;
-    text-shadow: 0 0 5px var(--primarycolor), 0 0 25px var(--primarycolor);
-    letter-spacing: 2px;
+    padding: 0.3rem;
+    color: var(--primarycolor);
     font-size: 2rem;
 }
 .wrapper{
@@ -27,24 +28,31 @@ h2{
     width: 600px;
     margin: 2rem;
     border-radius: 5px;
-    box-shadow: 5px 5px 15px #333;
+    box-shadow: inset 16px 16px 17px #080809,
+    inset -16px -16px 17px #1e1e23;
 }
+
+
 
 .wrapper .form-input{
     margin: 2rem;
     accent-color: var(--primarycolor) ;
-    caret-color: red;
+    caret-color: var(--primarycolor);
 }
 i{
     margin-right: 1rem ;
+    color: var(--primarycolor);
 }
 .form-input .form-control{
     width: 100%;
     height: 100%;
     outline: none;
-    border-radius: 5px;
-    padding: 0.3rem;
     font-size: 1rem;
+    padding: 0.2rem;
+    color: var(--text-color);
+    background-color: var(--bg);
+    border: none;
+    border-bottom: 2px solid var(--p);
 }
 
 .form-input label{
@@ -68,6 +76,7 @@ i{
 
 .btn:hover{
     background: var(--primarycolor);
-    box-shadow: 0 0 5px var(--primarycolor), 0 0 25px var(--primarycolor);
+    box-shadow: 0 0 5px var(--primarycolor);
     color: var(--bg);
 }
+

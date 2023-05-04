@@ -1,52 +1,49 @@
-{% extends 'main_gym/base.html' %}
+{% extends 'main_gym/base.html' %} {% block content %} {% load static %}
 
-{% block content %}
-{% load static %}
-
-<link rel="stylesheet" href="{% static 'main_gym/form.css' %}">
+<link rel="stylesheet" href="{% static 'main_gym/form.css' %}" />
 <div class="form-container">
-<div class="wrapper">
-
+  <div class="wrapper">
     <form action="" method="post">
-        <h2>ADD ENQUIRY</h2>
-        {% csrf_token %}
-        <div class="form-input">
-        <label for=""><i class="fa-solid fa-user" style="color: #ffffff;"></i>Name</label><br>
-        <input type="text" name="name" class="form-control">
-        </div>
-        <div class="form-input">
-        <label for=""><i class="fa-solid fa-phone" style="color: #ffffff;"></i>Contact</label><br>
-        <input type="tel" name="contact" class="form-control">
-        </div>
-        <div class="form-input">
-        <label for=""><i class="fa-solid fa-envelope" style="color: #ffffff;"></i>Email Id</label><br>
-        <input type="email" name="emailid" class="form-control">
-        </div>
-        <div class="form-input">
-        <label for=""><i class="fa-solid fa-arrow-up" style="color: #ffffff;"></i>Age</label><br>
-        <input type="text" name="age" class="form-control">
-        </div>
-        <div class="form-input">
-        <label for=""><i class="fa-solid fa-venus-mars" style="color: #ffffff;"></i>Gender</label><br>
-        <input type="radio" name="gender" value="male">&nbsp Male
-        <input type="radio" name="gender" value="female">&nbsp Female
-        </div>
-        <div class="form-input">
-        <input type="submit" value="Submit" class="btnn">
-        </div>
+      <h2><i class="fa-sharp fa-solid fa-pen-nib"></i>Add Enquiry</h2>
+      {% csrf_token %}
+      <div class="form-input">
+        <label for=""
+          ><i class="fa-solid fa-user"></i>Name</label
+        ><br>
+        <input type="text" name="name" class="form-control" />
+      </div>
+      <div class="form-input">
+        <label for=""
+          ><i class="fa-solid fa-phone"></i
+          >Contact</label
+        ><br>
+        <input type="tel" name="contact" class="form-control" />
+      </div>
+      <div class="form-input">
+        <label for=""
+          ><i class="fa-solid fa-envelope"></i>Email
+          Id</label
+        ><br />
+        <input type="email" name="emailid" class="form-control" />
+      </div>
+      <div class="form-input">
+        <label for=""
+          ><i class="fa-solid fa-arrow-up"></i>Age</label
+        ><br />
+        <input type="text" name="age" class="form-control" />
+      </div>
+      <div class="form-input">
+        <label for=""
+          ><i class="fa-solid fa-venus-mars"></i
+          >Gender</label
+        ><br />
+        <input type="radio" name="gender" value="male" checked/>&nbsp Male
+        <input type="radio" name="gender" value="female" />&nbsp Female
+      </div>
+      <div class="form-input">
+        <input type="submit" value="Submit" class="btn" />
+      </div>
     </form>
+  </div>
 </div>
-</div>
-
-{% if error == "no" %}
-<script>
-    alert('Record Inserted Successfully');
-    window.location=("{% url 'view_enquiry' %}")
-</script>
-{% endif %}
-{% if error == "yes" %}
-<script>
-    alert('Something went wrong, Try Again');
-</script>
-{% endif %}
 {% endblock %}
