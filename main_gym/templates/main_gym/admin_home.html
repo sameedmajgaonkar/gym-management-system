@@ -1,0 +1,20 @@
+{% extends 'main_gym/admin_base.html' %} {% block content %} {% load static %}
+
+  <div class="header-conatainer">
+    <div class="l-heading">
+      <i class="fa-solid fa-quote-left fa-5x" style="color: var(--p)"></i>
+      <h2>
+        <span class="moto">HUSTLE</span>
+        <p>for that</p>
+        <span class="moto">MUSCLE</span>
+      </h2>
+      <a class="join-us" href="{% url 'add_member' %}">
+        Join Us<i class="fa-solid fa-arrow-right" style="color: #000000"></i>
+      </a>
+    </div>
+    <div class="image">
+      <img src="{% static 'main_gym/trainer.png' %}" alt="" />
+    </div>
+  </div>
+  {% endblock %}
+

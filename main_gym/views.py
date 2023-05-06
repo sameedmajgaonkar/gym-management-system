@@ -12,8 +12,7 @@ from .forms import EmailForm
 # Create your views here.
 
 
-def gallery(request):
-    return render(request, 'main_gym/gallery.html')
+
 
 
 def loginuser(request):
@@ -26,7 +25,7 @@ def loginuser(request):
             return render(request, 'main_gym/loginuser.html', {'form': AuthenticationForm(), 'error': 'Username and password did not match'})
         else:
             login(request, user)
-            return redirect('home')
+            return redirect('admin_home')
 
 
 @login_required
@@ -36,9 +35,10 @@ def logoutuser(request):
         return redirect('loginuser')
 
 
+
 @login_required
-def home(request):
-    return render(request, 'main_gym/home.html')
+def admin_home(request):
+    return render(request, 'main_gym/admin_home.html')
 
 
 @login_required

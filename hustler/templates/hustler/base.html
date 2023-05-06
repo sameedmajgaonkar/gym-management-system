@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{% static 'hustler/master.css' %}" />
+    <script defer src="{% static 'main_gym/script.js' %}"></script>
+    <script
+      src="https://kit.fontawesome.com/50350e8f17.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      html{
+        scroll-behavior: smooth;
+      }
+    </style>
+
+    <title>GYM | WEBSITE</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <input type="checkbox" id="nav-check">
+
+          <h1 id="logo">
+            <i class="fa-solid fa-dumbbell fa-2x" style="margin-right: 1rem; color: #d7fb00"></i>HUSTLE<span class="sp-heading"> UP!</span>
+          </h1>
+
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      
+      <ul class="nav-list">
+        <li><a href="{% url 'hustler:home' %}">Home</a></li>
+        <li><a href="{% url 'hustler:home' %}#membership">Membership</a></li>
+        <li><a href="{% url 'hustler:gallery' %}">Gallery</a></li>
+        <li><a href="{% url 'hustler:home' %}#services">Services</a></li>
+        <li><a href="{% url 'hustler:home' %}#app">App</a></li>
+        <li><a href="{% url 'hustler:autobot' %}"><i class="fa-solid fa-robot fa-2x" id="abt"></i></a></li>
+        <form action="{% url 'loginuser' %}" method="GET">
+          {% csrf_token %}
+          <button class="log" type="submit">
+            <i class="fa-sharp fa-solid fa-right-from-bracket" style="margin-left: 1rem;"></i>
+          </button>
+        </form>
+      </ul>
+    </nav>
+    {% block content %}{% endblock %}
+    <footer id="main-footer">
+      <div class="footer-content">
+        <p>Copyright &copy; 2023. All Rights Reserved</p>
+        <div class="social">
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+    </footer>
+    <script>
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+navToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
+
+const navLinks = document.querySelectorAll('#nav-menu a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent the link's default behavior of navigating to a new page
+    navMenu.classList.remove('show');
+    const href = link.getAttribute('href');
+    setTimeout(() => { window.location.href = href; }, 500); // Delay the navigation for 500ms to allow the menu to close smoothly
+  });
+});
+    </script>
+  </body>
+</html>

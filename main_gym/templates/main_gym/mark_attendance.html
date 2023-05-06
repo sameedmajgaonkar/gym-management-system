@@ -1,4 +1,4 @@
-{% extends 'main_gym/base.html' %} {% block content %} {% load static %}
+{% extends 'main_gym/admin_base.html' %} {% block content %} {% load static %}
 <link rel="stylesheet" href="{% static 'main_gym/table.css' %}" />
 <link rel="stylesheet" href="{% static 'main_gym/form.css' %}" />
 
@@ -6,7 +6,6 @@
 
 <div
   class="table-container"
-  style="width: 50rem; overflow: hidden;"
 >
   <div class="table-wrapper">
     <form method="POST">

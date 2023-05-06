@@ -1,0 +1,102 @@
+{% extends 'hustler/base.html' %} {% block content %} {% load static %}
+
+  <div class="header-conatainer">
+    <div class="l-heading">
+      <i class="fa-solid fa-quote-left fa-5x" style="color: var(--p)"></i>
+      <h2>
+        <span class="moto">HUSTLE</span>
+        <p>for that</p>
+        <span class="moto">MUSCLE</span>
+      </h2>
+      <a class="join-us" href="{% url 'add_member' %}">
+        Join Us<i class="fa-solid fa-arrow-right" style="color: #000000"></i>
+      </a>
+    </div>
+    <div class="image">
+      <img src="{% static 'hustler/trainer.png' %}" alt="" />
+    </div>
+  </div>
+
+  <div class="services" id="services">
+    <h3 class="text-center hidden">
+      <span class="sp-heading">Services</span> we provide!
+    </h3>
+    <div class="service hidden text-center">
+      <i class="fa-solid fa-heart-pulse fa-3x"></i>
+      <div>
+        <h3>Cardio</h3>
+        <p>Cardio machines that burn calories instantly !</p>
+      </div>
+    </div>
+    <div class="service hidden text-center">
+      <i class="fa-solid fa-weight-scale fa-3x"></i>
+      <div>
+        <h3>Weight Loss</h3>
+        <p>
+          Wanna get rid of fat and over access weight, Our GYM to the rescue
+        </p>
+      </div>
+    </div>
+    <div class="service hidden text-center">
+      <i class="fa-solid fa-dumbbell fa-3x"></i>
+      <div>
+        <h3>Body Building</h3>
+        <p>Build it young Live long and happy life</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards" id="membership">
+    <h3 class="text-center hidden">Membership</h3>
+
+    <div class="card hidden text-center">
+      <i class="fa-solid fa-award fa-5x"></i>
+      <h3>Standard</h3>
+      <ul>
+        <li>&#10004; 1 Month Duration</li>
+        <li>&#10004; No cardio</li>
+        <li>&#10004; 24/7 support</li>
+      </ul>
+      <p>&#8377; 700</p>
+    </div>
+
+    <div class="card hidden text-center">
+      <i class="fa-solid fa-trophy fa-5x"></i>
+      <h3>Premium</h3>
+      <ul>
+        <li>&#10004; 2 Month Duration</li>
+        <li>&#10004; Cardio</li>
+
+        <li>&#10004; Individual attention</li>
+      </ul>
+      <p>&#8377; 1300</p>
+    </div>
+
+    <div class="card hidden text-center">
+      <i class="fa-solid fa-star fa-5x"></i>
+      <h3>Super</h3>
+      <ul>
+        <li>&#10004; 3 Month Duration</li>
+        <li>&#10004; Cardio</li>
+        <li>&#10004; Limited Offer</li>
+      </ul>
+      <p>&#8377; 2000</p>
+    </div>
+  </div>
+
+  <div id="app">
+    <div id="app-img" class="hidden">
+      <img src="{% static 'hustler/fitnessapp.png' %}" alt="" />
+    </div>
+    <div class="hidden" id="app-details">
+      <h2>Our<span class="sp-heading"> App</span></h2>
+      <p id="p-app" class="app-span">
+        "Get fit and stay healthy with our gym app! Our app is designed to
+        help you reach your fitness goals by providing you with personalized
+        exercise and diet plans."
+      </p>
+      <a href="{% url 'hustler:download_file' %}" class="button" id="download">Download<i class="fa fa-download" aria-hidden="true"></i></a>
+    </div>
+  </div>
+  {% endblock %}
+</div>

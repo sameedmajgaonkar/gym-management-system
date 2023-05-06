@@ -1,0 +1,36 @@
+{% extends 'hustler/base.html' %} {% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/50350e8f17.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'hustler/bot.css' %}">
+    <title>AutoBot</title>
+</head>
+<body>
+    
+    
+    <div class="bot-container">
+    <div class="bot-header">
+        
+        <div><img src="{% static 'hustler/logoo.png' %}" alt="logo"></div>
+        <div><h1>AUTOBOT</h1></div>
+    </div>
+    <img src="{% static 'hustler/logoo.png' %}" class="bglogo">
+    <div id="chatbot" class="chat-container">
+        <div id="messages"></div>
+        <div class="form-container">
+        <div class="flex">
+        <input type="text" id="input" placeholder="Type your message...">
+        <button id="send"><i class="fa-solid fa-robot fa-2x"></i></button>
+    </div>
+    </div>
+      </div>
+    </div>
+</div>
+    <script src="{% static 'hustler/bot.js' %}"></script>
+</body>
+</html>
+{% endblock %}

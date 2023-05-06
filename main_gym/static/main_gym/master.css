@@ -76,6 +76,7 @@ a {
   rotate: -7deg;
   animation: up-down 1.5s infinite cubic-bezier(0.25, 0.1, 0.25, 1);
   transition: all 1s;
+
 }
 .join-us {
   position: relative;
@@ -290,6 +291,8 @@ a {
   background-color: var(--bg);
   color: var(--p);
   overflow: hidden;
+  position: relative;
+  z-index: 1;
   height: 5rem;
 }
 #main-footer .footer-content {

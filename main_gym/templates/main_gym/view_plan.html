@@ -1,7 +1,8 @@
-{% extends 'main_gym/base.html' %} {% block content %} {% load static %}
+{% extends 'main_gym/admin_base.html' %} {% block content %} {% load static %}
 <link rel="stylesheet" href="{% static 'main_gym/table.css' %}" />
 <div class="table-container">
   <h2>View Plans</h2>
+  <div class="table-wrapper">
   <table border="1">
     <thead>
       <tr>
@@ -30,4 +31,17 @@
     </tbody>
   </table>
 </div>
+</div>
+<ul class="circles">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
 {% endblock %}
