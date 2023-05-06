@@ -28,4 +28,7 @@ body {
   .pic-wide {
     grid-column: span 2 / auto;
   }
+  .one{
+    display: none;
+  }
 }
