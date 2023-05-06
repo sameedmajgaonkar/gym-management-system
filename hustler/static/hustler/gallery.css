@@ -21,14 +21,20 @@ body {
   background-position-x: calc(100% + 50px);
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width : 600px) {
   .pic-tall {
     grid-row: span 2 / auto;
   }
   .pic-wide {
     grid-column: span 2 / auto;
   }
+}
+@media screen and (width < 600px) {
   .one{
     display: none;
+  }
+  
+  .photo-grid {
+    margin-top: 4.5rem;
   }
 }

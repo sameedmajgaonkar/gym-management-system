@@ -499,12 +499,14 @@ a {
   }
   .l-heading {
     margin: 0;
-    margin-top: 10px;
+    margin-top: 2.7rem;
   }
   .l-heading i {
     font-size: 3rem;
-    position: static;
-    margin-left: 10px;
+    position: relative;
+    z-index: 33;
+    right: 1rem;
+    top: 1rem;
   }
   .l-heading h2 {
     font-size: 2rem;
